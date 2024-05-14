@@ -13,6 +13,12 @@ This repository implements a chat application that utilizes a Large Language Mod
 - **LLM Integration:** Leverages an LLM (e.g., ChatGPT) for responses, providing informative and comprehensive answers.
 - **Chat History (Optional):** Stores chat history for users to revisit past conversations (requires database integration).
 
+## Docker
+
+'''Dockerfile
+docker pull nicodatacreator/chatseguros:latest'''
+
+
 ## Requirements
 
 - Python 3.x
@@ -38,6 +44,7 @@ pip install -r requirements.txt```
 
 3. Run the application:
 ```bash
-python app.py```
+python app.py
+
 
 

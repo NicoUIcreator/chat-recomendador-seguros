@@ -23,7 +23,7 @@ RUN pip install psycopg2-binary
 
 COPY . /static/
 # Run the FastAPI application with Uvicorn
-CMD ["python", "app_model.py"]
+CMD ["python", "app.py"]
 
 # Expose the port the app runs on
 EXPOSE 8000
