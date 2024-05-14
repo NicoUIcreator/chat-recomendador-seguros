@@ -15,8 +15,9 @@ This repository implements a chat application that utilizes a Large Language Mod
 
 ## Docker
 
-'''Dockerfile
-docker pull nicodatacreator/chatseguros:latest'''
+```bash
+docker pull nicodatacreator/chatseguros:latest
+```
 
 
 ## Requirements
@@ -32,19 +33,19 @@ docker pull nicodatacreator/chatseguros:latest'''
 1. Clone this repository:
 
 ```bash
-git clone [https://github.com/NicoUIcreator/chat-recomendador-seguros]```
-
+git clone https://github.com/NicoUIcreator/chat-recomendador-seguros
+```
 
 2. Install the required dependencies:
-
-```python
-pip install -r requirements.txt```
-
+```bash
+pip install -r requirements.txt
+```
 
 
 3. Run the application:
 ```bash
 python app.py
+```
 
 
 
