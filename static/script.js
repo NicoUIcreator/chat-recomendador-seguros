@@ -1,14 +1,13 @@
 const chatForm = document.getElementById('chat-form');
 const usuarioNameInput = document.getElementById('usuario-name');
 const usuarioQueryInput = document.getElementById('usuario-query');
-const chatResponseDiv = document.getElementById('chat-response');
+let chatResponseElement = document.getElementById('chat-response');
 const loadingDiv = document.getElementById('loading');
 const errorDiv = document.getElementById('error');
 const toggleButton = document.getElementById('dark-mode-toggle');
 const chatHistoryButton = document.getElementById('history-button');
 const chatHistoryElement = document.getElementById('chat-history');
 const sendButton = document.getElementById('send-button');
-const chatResponseElement = document.getElementById('chat-response');
 
 
 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
@@ -115,12 +114,6 @@ sendButton.addEventListener('click', async () => {
   // Get user input from the input field
   const chatInput = document.getElementById('chat-input');
 
-  // Trim any leading/trailing whitespace from the input
-
-  const userQuery = chatInput.value.trim();
-  // Check if the user input is empty
-  console.log(userQuery);
-
 
   if (!userQuery) {
     console.warn("Please enter a message before sending.");
@@ -148,10 +141,11 @@ async function sendChat(jsonData) {
     });
 
     const responseData = await response.json();
+    
 
     if (responseData.error) {
       console.error("Error:", responseData.error);
-      return;
+      return responseData;
     }
 
 
