@@ -26,12 +26,12 @@ This repository implements a chat application that utilizes a Large Language Mod
 1. Clone this repository:
 
 ```bash
-git clone [https://github.com/NicoUIcreator/chat-recomendador-seguros](https://github.com/NicoUIcreator/chat-recomendador-seguros)```
+git clone [https://github.com/NicoUIcreator/chat-recomendador-seguros]```
 
 
 2. Install the required dependencies:
 
-```bash
+```python
 pip install -r requirements.txt```
 
 

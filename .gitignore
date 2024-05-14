@@ -1,2 +1,4 @@
 /datos.py
+/jupiter.ipynb
 *.pyc
+.gitignore
