@@ -8,6 +8,12 @@ from fastapi.responses import HTMLResponse,FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from datos import api,db_user,db_pass,db_host,db_port
+
+
+
+# Ubicar en directorio principal
+os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 app = FastAPI(title="chatgpt para Seguros")
 
@@ -16,12 +22,12 @@ app.mount("/static", StaticFiles(directory="static"), name="index.html")
 templates = Jinja2Templates(directory="static")
 
 
-OPENAI_API_KEY = "sk-proj-FSQBRPkgskefsRAl24WrT3BlbkFJdcegXjvRj0qOGQ4lnZft"
+OPENAI_API_KEY = api
 llm = ChatOpenAI(api_key=OPENAI_API_KEY)
-db_user = "postgres"
-db_pass = "321321"
-db_host = "35.225.51.34"
-db_port = 5432
+db_user = db_user
+db_pass = db_pass
+db_host = db_host
+db_port = db_port
 
 if not OPENAI_API_KEY:
     raise ValueError("Missing environment variables: OPENAI_API_KEY")
