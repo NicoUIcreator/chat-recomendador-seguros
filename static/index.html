@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SegurosApp</title>
+  <style>
+    #chat-response, #chat-history {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .chat-history-item {
+      margin-bottom: 5px;
+    }
+    body {
+      background-color: dimgrey;
+      font-family: Roboto, sans-serif;
+      margin: 20px;
+    }
+
+    .chat-form {
+      background-color: rgb(189, 188, 188);
+      
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-form label {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .chat-form input,
+    .chat-form textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+
+    .chat-form input:hover,
+    .chat-form textarea:hover {
+      border-color: #ccc;
+    }
+
+    .chat-form button {
+      padding: 10px 20px;
+      background-color: #277d2a;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .chat-form button:hover {
+      background-color: #3e8e41;
+    }
+
+    /* Chat response and status styles */
+    .chat-status {
+      text-align: center;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    #loading {
+      background-color: #f5f5f5;
+    }
+
+    #error {
+      background-color: #f0f0f0;
+      color: rgb(251, 255, 0);
+    }
+
+    #chat-response {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .chat-form {
+        width: 90%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/dark-style.css" media="(prefers-color-scheme: dark)">
+
+</head>
+<body>
+
+  <div class="container">
+    <center><h1>Chat para elegir el mejor Seguro</h1></center>
+  </div>
+
+  
+  <center><button id="dark-mode-toggle">Dark Mode</button></center>
+  <div class="chat-container">
+    <div class="chat-history-container">
+      <button id="history-button">Mostrar Historial</button>
+      <div id="chat-history"></div>
+    </div>
+  </div>
+
+  <form id="chat-form">
+    <label for="usuario-name">Tu Nombre:</label>
+    <input type="text" id="usuario-name" name="usuario" placeholder="Cual es tu nombre?">
+    <br>
+    <label for="usuario-query">Consulta:</label>
+    <textarea id="usuario-query" name="query" rows="5" placeholder="Cual es tu consulta?"></textarea>
+    <br>
+    <button type="submit" id="send-button">Preguntale a ChatGPT</button>  <div id="loading" style="display: none;">Cargando...</div>
+    <button id="history-button">Mostrar Historial</button>
+    <div id="chat-history"></div>
+    <div id="error" style="display: none; color: red;"></div>
+    <div><p id="chat-response"></p></div> 
+    <div<p id="chatgpt_response"></p></div>
+  
+  </form>
+  <script src="/static/script.js"></script>
+</body>
+</html>
