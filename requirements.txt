@@ -1,5 +1,5 @@
 fastapi
-uvicorn
-psycopg2  
-openai   
+psycopg2
+langchain-openai
 jinja2
+uvicorn

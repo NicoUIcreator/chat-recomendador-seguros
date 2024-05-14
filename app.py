@@ -7,19 +7,15 @@ from langchain_openai import ChatOpenAI
 from fastapi.responses import HTMLResponse,FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
-from datos import api,db_user,db_pass,db_host,db_port
+from datos import *
 
-
-
-# Ubicar en directorio principal
-os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 app = FastAPI(title="chatgpt para Seguros")
 
 
 app.mount("/static", StaticFiles(directory="static"), name="index.html")
 templates = Jinja2Templates(directory="static")
+
 
 
 OPENAI_API_KEY = api
@@ -102,7 +98,7 @@ async def chat(chat: Optional[dict]):
     respuesta = llm.invoke([{"role": "system", "content": f"""
         **Experto en seguros:**
         Soy Chat, un gran modelo de lenguaje capacitado para ser informativo y comprensivo. También estoy bien versado en el ámbito de los seguros. Aquí está tu consulta: {user_query}
-        Proporcione una respuesta integral e informativa, basándose en su conocimiento de los conceptos y mejores prácticas de seguros.
+        Proporcione una respuesta breve, integral e informativa, basándose en su conocimiento de los conceptos y mejores prácticas de seguros.
         """}]).content
 
     chatgpt_response = respuesta

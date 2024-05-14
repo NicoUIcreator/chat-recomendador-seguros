@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SegurosApp</title>
+  <link rel="shortcut icon" href="/static/seguros.png" type="image/x-icon">
   <link rel="stylesheet" href="/static/style.css">
   <link rel="stylesheet" href="/static/dark-style.css" media="(prefers-color-scheme: dark)">
 
@@ -12,31 +13,39 @@
 <body>
 
   <div class="container">
-    <center><h1>Chat para elegir el mejor Seguro</h1></center>
+    <center>
+      <h1>Chat para elegir el mejor Seguro</h1>
+      <img src="/static/seguros.png" alt="Logo de SegurosApp">
+    </center>
   </div>
-
+  
   
   <center><button id="dark-mode-toggle">Dark Mode</button></center>
   <div class="chat-container">
+    <center>
     <div class="chat-history-container">
       <button id="history-button">Mostrar Historial</button>
       <div id="chat-history"></div>
     </div>
+    </center>
   </div>
 
   <form id="chat-form">
+    <center>
     <label for="usuario-name">Tu Nombre:</label>
     <input type="text" id="usuario-name" name="usuario" placeholder="Cual es tu nombre?">
     <br>
     <label for="usuario-query">Consulta:</label>
     <textarea id="usuario-query" name="query" rows="5" placeholder="Cual es tu consulta?"></textarea>
     <br>
-    <button type="submit" id="send-button">Preguntale a ChatGPT</button>  <div id="loading" style="display: none;">Cargando...</div>
-    <button id="history-button">Mostrar Historial</button>
+    <button type="submit" id="send-button">Preguntale a ChatGPT</button>
+    <button type="button" id="clear-button">Limpiar Chat</button>
+    <div id="loading" style="display: none;">Cargando...</div>
     <div id="chat-history"></div>
     <div id="error" style="display: none; color: red;"></div>
     <div><p id="chat-response"></p></div> 
     <div<p id="chatgpt_response"></p></div>
+    </center>
   
   </form>
   <script src="/static/script.js"></script>
